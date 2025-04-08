@@ -29,7 +29,7 @@ jobs:
     - name: all dependencies
       run: apt install -y libpq5 libpq-dev libssh2-1 libssh2-1-dev libgnutls28-dev libsvn-dev libsmb2-dev
     - name: configure
-      run: ./configure
+      run: ./configure --disable-module-smbnt --enable-module-smbnt-smb2
     - name: make
       run: make
     - name: make check
