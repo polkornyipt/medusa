@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: install dependencies (minimal build) 
-      run: apt-get update -y
+      run: apt-get update
     - name: Instalar dependências básicas
       run: apt-get install -y \
            build-essential \
@@ -31,8 +31,7 @@ jobs:
     - name: make
       run: make
     - name: install dependencies (full build)
-      run: |
-           apt-get update -y
+      run: apt-get update
     - name: all dependencies
       run: apt-get install -y \
            libpq5 \
