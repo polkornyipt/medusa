@@ -15,9 +15,15 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: install dependencies (minimal build) 
-      run: |
-        apt update
-        apt install build-essential autoconf libssl-dev
+      run: apt-get update -y
+    - name: Instalar dependências básicas
+      run: apt-get install -y \
+           build-essential \
+           autoconf \
+           automake \
+           libtool \
+           libssl-dev \
+           git
     - name: prepare autoconf
       run: autoreconf -if 
     - name: configure
@@ -26,8 +32,17 @@ jobs:
       run: make
     - name: install dependencies (full build)
       run: |
-        apt update
-        apt install libpq5 libpq-dev libssh2-1 libssh2-1-dev libgnutls28-dev libsvn-dev freerdp2-dev libsmb2-dev
+           apt-get update -y
+    - name: all dependencies
+      run: apt-get install -y \
+           libpq5 \
+           libpq-dev \
+           libssh2-1 \
+           libssh2-1-dev \
+           libgnutls28-dev \
+           libsvn-dev \
+           freerdp2-dev \
+           libsmb2-dev
     - name: configure
       run: ./configure
     - name: make
