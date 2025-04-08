@@ -27,7 +27,7 @@ jobs:
     - name: install dependencies (full build)
       run: apt update
     - name: all dependencies
-      run: apt install -y libpq5 libpq-dev libssh2-1 libssh2-1-dev libgnutls28-dev libsvn-dev freerdp2-dev libsmb2-dev
+      run: apt install -y libpq5 libpq-dev libssh2-1 libssh2-1-dev libgnutls28-dev libsvn-dev libsmb2-dev
     - name: configure
       run: ./configure
     - name: make
