@@ -14,10 +14,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: prepare autoconf
-      run: autoreconf -if 
     - name: install dependencies (minimal build) 
       run: sudo apt install build-essential autoconf libssl-dev
+    - name: prepare autoconf
+      run: autoreconf -if 
     - name: configure
       run: ./configure
     - name: make
