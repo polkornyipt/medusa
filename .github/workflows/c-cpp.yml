@@ -13,9 +13,11 @@ jobs:
       options: --privileged
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: install dependencies (minimal build) 
-      run: apt install build-essential autoconf libssl-dev
+      run: |
+        apt update
+        apt install build-essential autoconf libssl-dev
     - name: prepare autoconf
       run: autoreconf -if 
     - name: configure
